@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
           name: "id_trans_header",
         },
       });
+      Transaction_Header.belongsTo(models.User_Voucher, {
+        foreignKey: {
+          name: "id_user_voucher",
+        },
+      });
     }
   }
   Transaction_Header.init(
@@ -31,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      voucher_discount_value: {
+      voucher_discount_amount: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },

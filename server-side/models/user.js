@@ -24,9 +24,10 @@ module.exports = (sequelize, DataTypes) => {
           name: "id_user",
         },
       });
-      User.belongsToMany(models.Voucher, {
-        through: User_Voucher,
-        // uniqueKey: "id_user_voucher",
+      User.hasMany(models.User_Voucher, {
+        foreignKey: {
+          name: "id_user",
+        },
       });
       User.hasMany(models.Transaction_Header, {
         foreignKey: {

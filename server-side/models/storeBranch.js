@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
           name: "id_branch",
         },
       });
+      Branch.hasMany(models.Inventory, {
+        foreignKey: {
+          name: "id_branch",
+        },
+      });
     }
   }
   Branch.init(

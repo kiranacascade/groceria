@@ -9,6 +9,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User_Voucher.belongsTo(models.User, {
+        foreignKey: {
+          name: "id_user",
+        },
+      });
+      User_Voucher.belongsTo(models.Voucher, {
+        foreignKey: {
+          name: "id_voucher",
+        },
+      });
+      User_Voucher.hasMany(models.Transaction_Header, {
+        foreignKey: {
+          name: "id_user_voucher",
+        },
+      });
     }
   }
   User_Voucher.init(

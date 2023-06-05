@@ -13,6 +13,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-  // db.sequelize.sync({ alter: true });
+  // db.sequelize.sync({ force: true });
   console.log(`Server is running at port : ${process.env.PORT}`);
 });

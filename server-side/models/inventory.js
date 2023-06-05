@@ -19,12 +19,33 @@ module.exports = (sequelize, DataTypes) => {
           name: "id_inventory",
         },
       });
+      Inventory.belongsTo(models.Branch, {
+        foreignKey: {
+          name: "id_branch",
+        },
+      });
+      Inventory.belongsTo(models.Product, {
+        foreignKey: {
+          name: "id_product",
+        },
+      });
+      Inventory.hasMany(models.Cart, {
+        foreignKey: {
+          name: "id_inventory",
+        },
+      });
+      Inventory.hasMany(models.Transaction_Detail, {
+        foreignKey: {
+          name: "id_inventory",
+        },
+      });
     }
   }
   Inventory.init(
     {
       stock: {
         type: DataTypes.INTEGER,
+        allowNull: false,
       },
     },
     {

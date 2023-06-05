@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
           name: "id_category",
         },
       });
+      Product.hasMany(models.Inventory, {
+        foreignKey: {
+          name: "id_product",
+        },
+      });
     }
   }
   Product.init(
@@ -34,15 +39,20 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      is_active: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true,
+      product_description: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
+      // is_active: {
+      //   type: DataTypes.BOOLEAN,
+      //   defaultValue: true,
+      //   allowNull: false,
+      // },
     },
     {
       sequelize,
       modelName: "Product",
+      paranoid: true,
     }
   );
   return Product;

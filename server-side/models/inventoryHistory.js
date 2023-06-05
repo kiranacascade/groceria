@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
       reference: {
         type: DataTypes.STRING,
       },
+      quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
     {
       sequelize,

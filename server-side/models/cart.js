@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
           name: "id_user",
         },
       });
-      // Cart.belongsToMany(models.Inventory, {
-      //   foreignKey: {
-      //     name: "id_inventory",
-      //   },
-      // });
+      Cart.belongsTo(models.Inventory, {
+        foreignKey: {
+          name: "id_inventory",
+        },
+      });
     }
   }
   Cart.init(

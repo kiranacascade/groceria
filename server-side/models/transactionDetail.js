@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
           name: "id_trans_header",
         },
       });
+      Transaction_Detail.belongsTo(models.Inventory, {
+        foreignKey: {
+          name: "id_inventory",
+        },
+      });
     }
   }
   Transaction_Detail.init(

@@ -26,15 +26,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      is_active: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true,
-        allowNull: false,
-      },
+      // is_active: {
+      //   type: DataTypes.BOOLEAN,
+      //   defaultValue: true,
+      //   allowNull: false,
+      // },
     },
     {
       sequelize,
       modelName: "Category",
+      paranoid: true,
     }
   );
   return Category;

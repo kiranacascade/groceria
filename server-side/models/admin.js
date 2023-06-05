@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       role: {
         type: DataTypes.ENUM,
         values: ["super", "branch"],
+        allowNull: false,
       },
     },
     {
