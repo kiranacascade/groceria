@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.ENUM,
         values: ["product", "total purchase", "shipping", "referral code"],
       },
+      voucher_kind: {
+        type: DataTypes.ENUM,
+        values: ["percentage", "amount"],
+      },
       voucher_code: {
         type: DataTypes.STRING,
         allowNull: false,

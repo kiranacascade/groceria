@@ -22,12 +22,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      id_city: {
-        type: DataTypes.INTEGER,
+      city: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
-      id_province: {
-        type: DataTypes.INTEGER,
+      province: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       latitude: {

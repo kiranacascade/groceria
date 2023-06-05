@@ -24,6 +24,11 @@ module.exports = (sequelize, DataTypes) => {
           name: "id_user_voucher",
         },
       });
+      Transaction_Header.belongsTo(models.Shipping_Service, {
+        foreignKey: {
+          name: "id_shipping_service",
+        },
+      });
     }
   }
   Transaction_Header.init(
@@ -48,10 +53,9 @@ module.exports = (sequelize, DataTypes) => {
       payment_proof: {
         type: DataTypes.STRING,
       },
-
       order_status: {
         type: DataTypes.ENUM,
-        values: ["waiting for payment", "waiting for payment confirmation", "on progress", "out for delivery", "order confirmed", "canceled"],
+        values: ["waiting for payment", "waiting for payment confirmation", "processed", "shipped", "done", "canceled"],
       },
     },
     {
